@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm, User, AuthenticationForm
+from django.contrib.auth import authenticate, login
 
 
 # Create your views here.
@@ -10,8 +11,9 @@ def signup(request):
 
         if form.is_valid():
             print("form is valid")
-            form.save()
-            message = "User Created!"
+            user = form.save()
+            login(request, user)
+            return redirect("/")
         else:
             message = form.errors
     else:
@@ -19,3 +21,22 @@ def signup(request):
 
     context = {"form": form, "message": message}
     return render(request, "league/signup.html", context)
+
+
+def log_in(request):
+    message = ""
+    if request.method == "POST":
+        form = AuthenticationForm(data=request.POST)
+
+        if form.is_valid():
+            print("form is valid")
+            user = form.get_user()
+            login(request, user)
+            return redirect("/")
+        else:
+            message = form.errors
+    else:
+        form = AuthenticationForm()
+
+    context = {"form": form, "message": message}
+    return render(request, "league/login.html", context)

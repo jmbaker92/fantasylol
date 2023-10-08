@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block container %}
-<h1>SignUp</h1>
+<h1>Welcome, Sign In!</h1>
 <article class="grid">
     <img src="https://images.unsplash.com/photo-1587095951604-b9d924a3fda0" />
     <form method="post">
         {{message}}
         {% csrf_token %}
         {{form}}
-        <button type="submit">Register</button>
+        <button type="submit">Sign In</button>
     </form>
 </article>
 {% endblock %}
