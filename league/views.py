@@ -40,3 +40,7 @@ def log_in(request):
 
     context = {"form": form, "message": message}
     return render(request, "league/login.html", context)
+
+
+def index(request):
+    return render(request, "league/index.html")
