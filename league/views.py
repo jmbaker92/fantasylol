@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate, login
 # Create your views here.
 def signup(request):
     message = ""
+    if request.user.is_authenticated:
+        return redirect("/")
     if request.method == "POST":
         form = UserCreationForm(request.POST)
 
@@ -25,6 +27,8 @@ def signup(request):
 
 def log_in(request):
     message = ""
+    if request.user.is_authenticated:
+        return redirect("/")
     if request.method == "POST":
         form = AuthenticationForm(data=request.POST)
 
