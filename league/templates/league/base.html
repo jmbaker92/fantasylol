@@ -20,7 +20,11 @@
         <ul>
             <li><a href="/accounts/signup">SignUp</a></li>
             <li><a href="/accounts/login">Log In</a></li>
-            <li><a href="#" role="button">Button</a></li>
+            {% if request.user.is_authenticated %}
+            <li>Active</li>
+            {% else %}
+            <li>Not Signed In</li>
+            {% endif %}
         </ul>
     </nav>
     <main class="container">
