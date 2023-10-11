@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, User, AuthenticationForm
 from django.contrib.auth import authenticate, login
 
+from league.models import Team
+
 
 # Create your views here.
 def signup(request):
@@ -54,4 +56,6 @@ def profile(request):
     if not request.user.is_authenticated:
         return redirect("/")
     else:
-        return render(request, "league/profile.html")
+        team = Team.objects.get(owner=request.user)
+        context = {"team": team}
+        return render(request, "league/profile.html", context)
