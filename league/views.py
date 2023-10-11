@@ -48,3 +48,10 @@ def log_in(request):
 
 def index(request):
     return render(request, "league/index.html")
+
+
+def profile(request):
+    if not request.user.is_authenticated:
+        return redirect("/")
+    else:
+        return render(request, "league/profile.html")

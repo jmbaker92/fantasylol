@@ -21,6 +21,7 @@ from league import views
 from league.views import log_in
 
 urlpatterns = [
+    path("accounts/profile/", views.profile, name="profile page"),
     path("", views.index, name="homepage"),
     path("accounts/login/", views.log_in, name="login"),
     path("admin/", admin.site.urls),
