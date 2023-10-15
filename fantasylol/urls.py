@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
+from fantasylol import settings
 from league import views
 from league.views import log_in
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("accounts/profile/", views.profile, name="profile page"),
@@ -27,4 +29,4 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/signup/", views.signup, name="signup"),
     path("accounts/", include("django.contrib.auth.urls")),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
