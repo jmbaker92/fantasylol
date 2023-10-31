@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, User, AuthenticationForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+
 
 from league.models import Team
 
@@ -38,7 +40,8 @@ def log_in(request):
             print("form is valid")
             user = form.get_user()
             login(request, user)
-            return redirect("/")
+            nextRoute = request.GET.get("next", "/")
+            return redirect(nextRoute)
         else:
             message = form.errors
     else:
@@ -52,10 +55,26 @@ def index(request):
     return render(request, "league/index.html")
 
 
+@login_required
 def profile(request):
-    if not request.user.is_authenticated:
-        return redirect("/")
+    team = Team.objects.get(owner=request.user)
+    context = {"team": team}
+    return render(request, "league/profile.html", context)
+
+
+@login_required
+def team_creation(request):
+    userTeams = Team.objects.filter(owner=request.user)
+    if len(userTeams) > 0:
+        return redirect("/team")
+    userTeamName = request.GET.get("team-name", "")
+    if not userTeamName:
+        return render(request, "league/teamcreation.html")
     else:
-        team = Team.objects.get(owner=request.user)
-        context = {"team": team}
-        return render(request, "league/profile.html", context)
+        try:
+            team = Team(name=userTeamName, owner=request.user)
+            team.save()
+            return redirect("/")
+        except:
+            context = {"error_message": "Team name is already taken"}
+            return render(request, "league/teamcreation.html", context)

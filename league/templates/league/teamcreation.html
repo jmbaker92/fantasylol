@@ -1,0 +1,20 @@
+{% extends "league/base.html" %}
+{% load static %}
+
+{% block container%}
+<form action="" method="get">
+    <div>
+        <label for="team-name">Enter your Team name: </label>
+
+        {% if error_message %}
+        <input type="text" name="team-name" id="team-name" aria-invalid="true" required />
+        <small class="errorMessage">{{error_message}}</small>
+        {% else %}
+        <input type="text" name="team-name" id="team-name" required />
+        {%endif %}
+
+    </div>
+    <input type="submit" value="Create Team" />
+
+</form>
+{%endblock%}

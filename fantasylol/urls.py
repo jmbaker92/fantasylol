@@ -23,10 +23,11 @@ from league.views import log_in
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path("accounts/profile/", views.profile, name="profile page"),
+    path("accounts/profile/", views.profile, name="profilepage"),
     path("", views.index, name="homepage"),
     path("accounts/login/", views.log_in, name="login"),
     path("admin/", admin.site.urls),
     path("accounts/signup/", views.signup, name="signup"),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("team/new/", views.team_creation, name="newteam"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

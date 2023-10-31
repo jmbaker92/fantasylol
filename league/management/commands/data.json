@@ -1,0 +1,338 @@
+{
+    "lolteams": [
+        {
+            "name": "Cloud 9",
+            "image": "images/logos/c9logo.png",
+            "players": [
+                {
+                    "name": "Blaber",
+                    "image": "images/players/blaber.png",
+                    "role": "JG"
+                },
+                {
+                    "name": "Sven",
+                    "image": "images/players/sven.png",
+                    "role": "SP"
+                },
+                {
+                    "name": "Fudge",
+                    "image": "images/players/fudge.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "David Han",
+                    "image": "images/players/davidhan.png",
+                    "role": "SP"
+                },
+                {
+                    "name": "Berserker",
+                    "image": "images/players/berserker.png",
+                    "role": "AD"
+                },
+                {
+                    "name": "Emenes",
+                    "image": "images/players/emenes.png",
+                    "role": "MD"
+                }
+            ]
+        },
+        {
+            "name": "Golden Gaurdians",
+            "image": "images/logos/goldenguardianslogo.png",
+            "players": [
+                {
+                    "name": "Licorice",
+                    "image": "images/players/licorice.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "Stixxay",
+                    "image": "images/players/stixxay.png",
+                    "role": "AD"
+                },
+                {
+                    "name": "Array",
+                    "image": "images/players/array.png",
+                    "role": "AD"
+                },
+                {
+                    "name": "River",
+                    "image": "images/players/river.png",
+                    "role": "JG"
+                },
+                {
+                    "name": "huhi",
+                    "image": "images/players/huhi.png",
+                    "role": "SP"
+                },
+                {
+                    "name": "Gori",
+                    "image": "images/players/gori.png",
+                    "role": "MD"
+                }
+            ]
+        },
+        {
+            "name": "Evil Geniuses LG",
+            "image": "images/logos/evilgeniuseslglogo.png",
+            "players": [
+                {
+                    "name": "Sheiden",
+                    "image": "images/players/shieden.png",
+                    "role": "JG"
+                },
+                {
+                    "name": "Inspired",
+                    "image": "images/players/inspired",
+                    "role": "JG"
+                },
+                {
+                    "name": "jojopyun",
+                    "image": "images/players/jojopyun.png",
+                    "role": "MD"
+                },
+                {
+                    "name": "Armao",
+                    "image": "images/players/armao.png",
+                    "role": "JG"
+                },
+                {
+                    "name": "Eyla",
+                    "image": "images/players/eyla.png",
+                    "role": "SP"
+                },
+                {
+                    "name": "Revenge",
+                    "image": "images/players/revenge.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "Unforgiven",
+                    "image": "images/players/unforgiven.png",
+                    "role": "AD"
+                }
+            ]
+        },
+        {
+            "name": "Team Liquid Honda",
+            "image": "images/logo/teamliquidhonda.logo",
+            "players": [
+                {
+                    "name": "Kim Down",
+                    "image": "images/players/kimdown.png",
+                    "role": "SP"
+                },
+                {
+                    "name": "Summit",
+                    "image": "images/players/summit.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "Pyosik",
+                    "image": "images/players/pyosik.png",
+                    "role": "JG"
+                },
+                {
+                    "name": "Mir",
+                    "image": "images/players/mir.png",
+                    "role": "JG"
+                },
+                {
+                    "name": "Arrow",
+                    "image": "images/players/arrow.png",
+                    "role": "AD"
+                },
+                {
+                    "name": "Bwipo",
+                    "image": "images/players/bwipo.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "Bradley",
+                    "image": "images/players/bradley.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "Haeri",
+                    "image": "images/players/haeri.png",
+                    "role": "MD"
+                },
+                {
+                    "name": "Yeon",
+                    "image": "images/players/yeon.png",
+                    "role": "AD"
+                },
+                {
+                    "name": "CoreJJ",
+                    "image": "images/players/corejj.png",
+                    "role": "SP"
+                },
+                {
+                    "name": "APA",
+                    "image": "images/players/apa.png",
+                    "role": "MD"
+                }
+            ]
+        },
+        {
+            "name": "NRG",
+            "image": "images/logos/nrg.png",
+            "players": [
+                {
+                    "name": "FBI",
+                    "image": "images/players/fbi.png",
+                    "role": "AD"
+                },
+                {
+                    "name": "Ignar",
+                    "image": "images/players/ignar.png",
+                    "role": "SP"
+                },
+                {
+                    "name": "Palafox",
+                    "image": "images/players/palafox.png",
+                    "role": "MD"
+                },
+                {
+                    "name": "Dhokla",
+                    "image": "images/players/dhokla.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "Contractz",
+                    "image": "images/players/contractz.png",
+                    "role": "JG"
+                }
+            ]
+        },
+        {
+            "name": "Dignitas",
+            "image": "images/logo/dignitaslogo.png",
+            "players": [
+                {
+                    "name": "Tomo",
+                    "image": "images/players/tomo.png",
+                    "role": "AD"
+                },
+                {
+                    "name": "Santorin",
+                    "image": "images/players/santorin.png",
+                    "role": "JG"
+                },
+                {
+                    "name": "Jensen",
+                    "image": "images/players/jensen.png",
+                    "role": "MD"
+                },
+                {
+                    "name": "Poome",
+                    "image": "images/players/poome.png",
+                    "role": "SP"
+                },
+                {
+                    "name": "Rich",
+                    "image": "images/players/rich.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "exYu",
+                    "image": "images/players/exyu.png",
+                    "role": "JG"
+                }
+            ]
+        },
+        {
+            "name": "100 Theives",
+            "image": "images/logo/100thieveslogo.png",
+            "players": [
+                {
+                    "name": "Nukeduck",
+                    "image": "images/players/nukeduck.png",
+                    "role": "MD"
+                },
+                {
+                    "name": "Ssumday",
+                    "image": "images/players/ssumday.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "Sniper",
+                    "image": "images/players/sniper.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "Doublelift",
+                    "image": "images/players/doublelift.png",
+                    "role": "AD"
+                },
+                {
+                    "name": "Busio",
+                    "image": "images/players/busio.png",
+                    "role": "SP"
+                },
+                {
+                    "name": "Tenacity",
+                    "image": "images/players/tenacity.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "Closer",
+                    "image": "images/players/closer.png",
+                    "role": "JG"
+                }
+            ]
+        },
+        {
+            "name": "FlyQuest",
+            "image": "images/logo/flyquestlogo.png",
+            "players": [
+                {
+                    "name": "Impact",
+                    "image": "images/players/impact.png",
+                    "role": "TP"
+                },
+                {
+                    "name": "Massu",
+                    "image": "images/players/davidhan.png",
+                    "role": "AD"
+                },
+                {
+                    "name": "Winsome",
+                    "image": "images/players/winsome.png",
+                    "role": "SP"
+                },
+                {
+                    "name": "Spica",
+                    "image": "images/players/spica.png",
+                    "role": "JG"
+                },
+                {
+                    "name": "Vulcan",
+                    "image": "images/player/vulcan.png",
+                    "role": "SP"
+                }
+            ]
+        },
+        {
+            "name": "Immortals Progressive",
+            "image": "images/logo/immortalsprogressive.png",
+            "players": [
+                {
+                    "name": "Ablazeolive",
+                    "image": "images/players/ablazeolive.png",
+                    "role": "MD"
+                },
+                {
+                    "name": "Tactical",
+                    "image": "images/players/tactical.png",
+                    "role": "AD"
+                },
+                {
+                    "name": "Treatz",
+                    "image": "images/players/treatz",
+                    "role": "SP"
+                }
+            ]
+        }
+    ]
+}

@@ -8,9 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'league/css/pico/pico.min.css' %}">
     <link rel="stylesheet" href="{% static 'league/css/main.css' %}">
+
     <title>League App</title>
+    <script src="{% static '/league/scripts/index.js' %}" defer></script>
     {% block header %}
     {% endblock %}
+
+
 </head>
 
 <body>
@@ -31,6 +35,7 @@
         {% block container %}
         {% endblock %}
     </main>
+
 </body>
 
 </html>
