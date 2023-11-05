@@ -1,0 +1,35 @@
+{% extends "league/base.html" %}
+{% load static %}
+
+
+{% block container %}
+<h1 id="title">Team Draft</h1>
+
+<div class="grid">
+    <div>
+        <h2>Your Players</h2>
+
+        <ul id="selectedplayers">
+
+        </ul>
+    </div>
+    <div>
+        <h2>Available Players</h2>
+
+        <ul class="draftlist" id="draftlist">
+            {% for player in players %}
+            <li id="{{player.id}}">{{player.name}}
+
+                <span class="badge"
+                    style="background-color: var(--{{player.position}}-color);">{{player.get_position_display}}</span>
+                <button role="button" type="button" class="outline draftbutton"
+                    onclick="selectPlayer('{{player.id}}')">Draft</button>
+            </li>
+
+            {% endfor %}
+        </ul>
+    </div>
+
+
+</div>
+{% endblock %}

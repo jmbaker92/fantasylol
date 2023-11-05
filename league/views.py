@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
 
-from league.models import Team
+from league.models import Player, Team
 
 
 # Create your views here.
@@ -78,3 +78,10 @@ def team_creation(request):
         except:
             context = {"error_message": "Team name is already taken"}
             return render(request, "league/teamcreation.html", context)
+
+
+@login_required
+def draft(request):
+    players = Player.objects.all()
+    context = {"players": players}
+    return render(request, "league/draft.html", context)

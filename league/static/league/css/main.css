@@ -1,3 +1,12 @@
+:root {
+    --JG-color: rgb(56, 165, 42);
+    --TP-color: rgba(178, 46, 178, 0.711);
+    --MD-color: rgb(255, 115, 0);
+    --AD-color: red;
+    --SP-color: blue;
+}
+
+
 .nav {
     margin-left: 20px;
     margin-right: 20px;
@@ -13,4 +22,29 @@
     color: var(--form-element-invalid-border-color);
 
 
+}
+
+.badge {
+    background-color: #eeff00;
+
+    color: #fff;
+
+    padding: 5px 10px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+}
+
+.draftlist {
+    overflow: scroll;
+    height: 500px;
+}
+
+.draftbutton {
+    width: fit-content;
+    padding: 6px;
+    font-size: small;
+    margin-left: 10px;
 }
