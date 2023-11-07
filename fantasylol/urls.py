@@ -23,6 +23,8 @@ from league.views import log_in
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path("api/draft-players/", views.draft_players, name="draftplayers"),
+    path("team/user/", views.user_team, name="userteam"),
     path("accounts/profile/", views.profile, name="profilepage"),
     path("", views.index, name="homepage"),
     path("accounts/login/", views.log_in, name="login"),

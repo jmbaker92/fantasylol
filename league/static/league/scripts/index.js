@@ -30,3 +30,46 @@ function removePlayer(playerId) {
     button.textContent = "Draft";
     draftPlayerList.prepend(playerElement)
 }
+
+function handleDraftSubmit(playerId) {
+    const selectedPlayerIDs = [];
+
+    var selectedPlayerList = document.getElementById('selectedplayers');
+    if (!selectedPlayerList) {
+        throw new Error("Couldn't find selected player");
+    }
+    var playerElements = selectedPlayerList.querySelectorAll('.player');
+    playerElements.forEach(player => {
+        const playerId = parseInt(player.id);
+        selectedPlayerIDs.push(playerId);
+    });
+    console.log("Selected Player IDs:", selectedPlayerIDs);
+
+    const data = {
+        selectedPlayerIDs: selectedPlayerIDs
+    };
+
+    fetch('/api/draft-players/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (response.ok) {
+                // Handle success, e.g., show a success message.
+                console.log('Players added to the team successfully');
+            } else {
+                // Handle the error, e.g., show an error message.
+                console.error('Failed to add players to the team');
+            }
+        })
+        .catch(error => {
+            console.error('An error occurred:', error);
+        });
+
+}
+
+const submitButton = document.getElementById('submit-button');
+submitButton.addEventListener('click', handleDraftSubmit);

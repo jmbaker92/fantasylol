@@ -25,6 +25,7 @@
         <ul>
             {% if request.user.is_authenticated %}
             <li><a href="/accounts/profile">{{user}} is active</a></li>
+            <li><a href="/team/new">Create Team</a></li>
             {% else %}
             <li><a href="/accounts/signup">SignUp</a></li>
             <li><a href="/accounts/login">Log In</a></li>

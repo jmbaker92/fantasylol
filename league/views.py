@@ -2,7 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, User, AuthenticationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+import json
 
 from league.models import Player, Team
 
@@ -74,7 +77,7 @@ def team_creation(request):
         try:
             team = Team(name=userTeamName, owner=request.user)
             team.save()
-            return redirect("/")
+            return redirect("/team/draft")
         except:
             context = {"error_message": "Team name is already taken"}
             return render(request, "league/teamcreation.html", context)
@@ -82,6 +85,36 @@ def team_creation(request):
 
 @login_required
 def draft(request):
+    userTeam = Team.objects.get(owner=request.user)
     players = Player.objects.all()
-    context = {"players": players}
+    context = {"players": players, "userTeam": userTeam}
     return render(request, "league/draft.html", context)
+
+
+@login_required
+def user_team(request):
+    userTeams = Team.objects.get(owner=request.user)
+
+    context = {"userTeams": userTeams}
+    return render(request, "league/userteam.html", context)
+
+
+@csrf_exempt
+@login_required
+def draft_players(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            selected_player_ids = data.get("selectedPlayerIDs", [])
+            userTeam = Team.objects.get(owner=request.user)
+            for playerId in selected_player_ids:
+                userTeam.players.add(playerId)
+            userTeam.save()
+            if userTeam != 0:
+                return JsonResponse(
+                    {"message": "Players added to the team successfully"}
+                )
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON data"}, status=400)
+
+    return JsonResponse({"error": "Invalid request method"}, status=405)
