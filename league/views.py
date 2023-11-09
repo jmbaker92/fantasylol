@@ -94,8 +94,9 @@ def draft(request):
 @login_required
 def user_team(request):
     userTeams = Team.objects.get(owner=request.user)
+    userPlayers = userTeams.players.all()
 
-    context = {"userTeams": userTeams}
+    context = {"userTeams": userTeams, "userPlayers": userPlayers}
     return render(request, "league/userteam.html", context)
 
 
